@@ -1,0 +1,7 @@
+{
+  "name": "two-kite-winders",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

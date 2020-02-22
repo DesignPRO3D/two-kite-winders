@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "two-kite-winders",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
