@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Two Kite Winders</string>
+    <string name="title_activity_main">Two Kite Winders</string>
+    <string name="package_name">dev.itmagic.twokitewinders</string>
+    <string name="custom_url_scheme">dev.itmagic.twokitewinders</string>
+</resources>

@@ -1,20 +1,77 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Two Kite Winders
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onOpenInfo()">
+        <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-md="10" offset-md="1" size-lg="8" offset-lg="2">
+
+        <img src="/assets/images/k2.png" alt="corner stair width two kite windesr">
+
+        <ion-grid fixed class="ion-no-margin">
+
+          <ion-row>
+            <ion-col size="12" size-md="8" offset-md="2">
+              <ion-item lines="none">
+                <ion-label position="inline" color="medium">A:</ion-label>
+                <ion-input type="number" [(ngModel)]="_A" autofocus (ionChange)="onCalculateData()"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label position="inline" color="medium">Width:</ion-label>
+                <ion-input type="number" [(ngModel)]="_width" (ionChange)="onCalculateData()"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="inline" color="medium">Step Rise:</ion-label>
+                <ion-input type="number" [(ngModel)]="_stepRise" (ionChange)="onCalculateData()"></ion-input>
+              </ion-item>
+
+              <ion-item lines="none">
+                <ion-label class="label-result" position="inline" color="medium">gK(kite going):</ion-label>
+                <ion-input class="input-result" type="number" disabled="true" [(ngModel)]="_goingKite"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="label-result" position="inline" color="medium">D:</ion-label>
+                <ion-input class="input-result" [style.color]="errorD ? 'red' : 'black'" type="number" disabled="true" [(ngModel)]="_D"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="label-result" position="inline" color="medium">2R + G:</ion-label>
+                <ion-input class="input-result" [style.color]="errorRG ? 'red' : 'black'" type="number" disabled="true" [(ngModel)]="_2RG"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+
+        <ion-card>
+          <ion-card-header style="padding-bottom: 0px;">
+            <ion-card-title color="success">2 Kite Winders</ion-card-title>
+            <ion-card-subtitle>The following rules must be met:</ion-card-subtitle>
+          </ion-card-header>
+          
+          <ion-card-content style="padding-top: 0px;">
+            <ul>
+              <li>The rule for all treads says that, “Twice the individual rise plus the going (2R +G) must be between 500mm and 700mm</li>
+              <li>Tread width at the narrow end should be 50mm minimum(D)</li>
+            </ul>
+            To measure the individual going of the winder treads, 
+            this is done by measuring the arc around the tread which is 
+            created from the centre of the lower flight to the centre of the upper flight.
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
 </ion-content>
